@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial do site</title>
-    <link href="bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body>
-    <h1>Estrutura Condicional (IF ELSE)</h1>
-
-    <div class="container">
+<?php include "cabecalho.php"; ?>
 
 <p>$inteira = 10</p>
 <p>$nome = "Prof"</p>
@@ -93,8 +81,6 @@ else
     {
         echo "Nomes diferentes";
     }
-   </div>
-
-    <script stc="bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  
+<?php include "rodape.php"; ?>
+    
