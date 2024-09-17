@@ -71,7 +71,9 @@
             </a>
          
           </li>
-     
+          <a class="nav-link" href="sorteio.php">
+           Sorteio
+          </a>
  
       </ul>
       <form class="d-flex" role="search">
