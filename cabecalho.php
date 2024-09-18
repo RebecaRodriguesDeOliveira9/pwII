@@ -72,7 +72,7 @@
          
           </li>
           <a class="nav-link" href="sorteio.php">
-           Sorteio
+           Sorteio dos Alunos Super Dotados(EXAUSTOS!!!)
           </a>
  
       </ul>

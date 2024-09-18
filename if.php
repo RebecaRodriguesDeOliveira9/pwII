@@ -52,10 +52,10 @@ else
     }
     </pre>
     <?php
-    $nome = "Rebeca";~
+    $nome = "Rebeca";
     if( strlen($nome) > 5 )
     {
-        echo "<h2>seu nome tem mais que 10 caracteres quntidade é".strlen($nome)."</h2>"
+        echo "<h2>seu nome tem mais que 10 caracteres quntidade é".strlen($nome)."</h2>";
     }
     ?>
 
