@@ -80,6 +80,11 @@
            Recuperação da Prova
           </a>
 
+          </li>
+          <a class="nav-link" href="produtos.php">
+           Produtos
+          </a>
+
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
