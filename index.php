@@ -133,7 +133,7 @@ foreach ($resultados as $chave => $valor)
 }
    ?>
  
-<?php include"cabecalho.php"; ?>
+<?php include "cabecalho.php"; ?>
 
 <h1>Página Inicialdo site</h1>
 

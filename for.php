@@ -1,4 +1,4 @@
-<?php include"cabecalho.php"; ?>
+<?php include "cabecalho.php"; ?>
  <h1>laço de repatição FOR</h1>
  <p>esse laço de repetição é mais utilizado e mais prático </p>
  <pre>

@@ -1,4 +1,4 @@
-<?php include"cabecalho.php"; ?>
+<?php include "cabecalho.php"; ?>
     <h1>Laço de repetição while</h1>
     <p> O Laço de repetição while necessita de 3 itens para se tornar um loop: </p>
     <ol>

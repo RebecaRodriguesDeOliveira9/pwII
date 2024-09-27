@@ -1,4 +1,4 @@
-<?php include"cabecalho.php"; ?>
+<?php include "cabecalho.php"; ?>
 
 
  <div class="row">
