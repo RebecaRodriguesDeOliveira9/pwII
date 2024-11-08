@@ -30,7 +30,7 @@ $script = "
     ('Kit de Maquiagem - 12 Peças', 89.90, '1234567890132', 1),
     ('Cafeteira Elétrica - 12 Xícaras', 299.90, '1234567890133', 1),
     ('Conjunto de Panelas - Antiaderente', 349.90, '1234567890134', 1),
-    ('TV LED 50\" - Full HD', 2499.00, '1234567890135', 1),
+    ('TV LED 50\' - Full HD', 2499.00, '1234567890135', 1),
     ('Geladeira Inverse - 450 Litros', 3499.00, '1234567890136', 1),
     ('Assento de Carro - Conforto e Segurança', 199.90, '1234567890137', 1),
     ('Conjunto de Facas de Cozinha - 6 Peças', 129.90, '1234567890138', 1),
@@ -81,6 +81,7 @@ $script = "
         CONSTRAINT FK_PERMISSAO FOREIGN KEY (permissao_id) REFERENCES PERMISSOES(ID) ON DELETE CASCADE
     );
     
+ 
     ALTER TABLE PRODUTOS
 ADD COLUMN CATEGORIA_ID INT;
 
@@ -89,6 +90,16 @@ ADD CONSTRAINT FK_PRODUTOS_CATEGORIAS
 FOREIGN KEY (CATEGORIA_ID) REFERENCES CATEGORIAS ( ID );
     
 ";
+
+
+try {
+    // Conexão com o banco de dados
+    $conn = new PDO("mysql:host=$host;dbname=$nome_banco", $usuario, $senha);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "Falha na conexão: " . $e->getMessage();
+}
+
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
