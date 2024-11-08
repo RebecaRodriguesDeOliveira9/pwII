@@ -14,7 +14,7 @@
             echo "Hello World";
             echo "<br>";
             $numero = 10;
-            $nome = "Fernando";
+            $nome = "Rebeca";
             $frase1 = "<p> $nome camisa $numero frase com paragrafo </p>";
             $frase2 = $nome."  camisa ".$numero;// cocatenação das antigas
             echo $frase1;
