@@ -16,7 +16,7 @@ $script = "
         ATIVO BIT NOT NULL
     );
     INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Amendoin Verde', '7898728640096', 5.50, 1);
-    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Goiabinha Saborasa', '7898045700725', 1.50, 1);
+    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Goiabinha Saborosa', '7898045700725', 1.50, 1);
     INSERT INTO produtos (DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO) VALUES
     ('Camiseta Estampada - 100% Algodão', 49.90, '1234567890123', 1),
     ('Tênis Esportivo - Conforto e Estilo', 299.90, '1234567890124', 1),
@@ -30,7 +30,7 @@ $script = "
     ('Kit de Maquiagem - 12 Peças', 89.90, '1234567890132', 1),
     ('Cafeteira Elétrica - 12 Xícaras', 299.90, '1234567890133', 1),
     ('Conjunto de Panelas - Antiaderente', 349.90, '1234567890134', 1),
-    ('TV LED 50\' - Full HD', 2499.00, '1234567890135', 1),
+    ('TV LED 50\" - Full HD', 2499.00, '1234567890135', 1),
     ('Geladeira Inverse - 450 Litros', 3499.00, '1234567890136', 1),
     ('Assento de Carro - Conforto e Segurança', 199.90, '1234567890137', 1),
     ('Conjunto de Facas de Cozinha - 6 Peças', 129.90, '1234567890138', 1),
@@ -39,25 +39,23 @@ $script = "
     ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1),
     ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1);
 
-
-   ALTER TABLE PRODUTOS
+    ALTER TABLE PRODUTOS
     ADD COLUMN CATEGORIA_ID INT;
 
-    
+
      CREATE TABLE CATEGORIAS (
         ID INT PRIMARY KEY AUTO_INCREMENT,
         NOME VARCHAR(100) NOT NULL
     );
 
-    
     ALTER TABLE PRODUTOS ADD CONSTRAINT FK_PRODUTOS_CATEGORIAS FOREIGN KEY (CATEGORIA_ID) REFERENCES CATEGORIAS ( ID );
+
      INSERT INTO CATEGORIAS (NOME) VALUES ('Eletrônicos');
      INSERT INTO CATEGORIAS (NOME) VALUES ('Vestuário'); 
      INSERT INTO CATEGORIAS (NOME) VALUES ('Alimentos'); 
      INSERT INTO CATEGORIAS (NOME) VALUES ('Utilidades Domésticas');
      INSERT INTO CATEGORIAS (NOME) VALUES ('Gamer');
 
-     
      CREATE TABLE USUARIOS (
         ID INT PRIMARY KEY AUTO_INCREMENT,
         LOGIN VARCHAR(50) NOT NULL,
@@ -65,14 +63,12 @@ $script = "
         ATIVO BIT DEFAULT 1
     );
 
-    
     CREATE TABLE PERMISSOES (
         ID INT PRIMARY KEY AUTO_INCREMENT,
         DESCRICAO VARCHAR(150) NOT NULL,
         ROLE VARCHAR(50) NOT NULL
     );
 
-    
     CREATE TABLE USUARIOS_PERMISSOES (
         ID INT PRIMARY KEY AUTO_INCREMENT,
         USUARIO_ID INT NOT NULL,
@@ -80,26 +76,9 @@ $script = "
         CONSTRAINT FK_USUARIO FOREIGN KEY (usuario_id) REFERENCES USUARIOS(ID) ON DELETE CASCADE,
         CONSTRAINT FK_PERMISSAO FOREIGN KEY (permissao_id) REFERENCES PERMISSOES(ID) ON DELETE CASCADE
     );
-    
- 
-    ALTER TABLE PRODUTOS
-ADD COLUMN CATEGORIA_ID INT;
 
-ALTER TABLE PRODUTOS
-ADD CONSTRAINT FK_PRODUTOS_CATEGORIAS
-FOREIGN KEY (CATEGORIA_ID) REFERENCES CATEGORIAS ( ID );
-    
+    INSERT INTO `usuarios_permissoes` (`ID`, `USUARIO_ID`, `PERMISSAO_ID`) VALUES (NULL, '1', '6'), (NULL, '1', '5');
 ";
-
-
-try {
-    // Conexão com o banco de dados
-    $conn = new PDO("mysql:host=$host;dbname=$nome_banco", $usuario, $senha);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    echo "Falha na conexão: " . $e->getMessage();
-}
-
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
